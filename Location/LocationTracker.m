@@ -8,6 +8,10 @@
 
 #import "LocationTracker.h"
 
+#define LATITUDE @"latitude"
+#define LONGITUDE @"longitude"
+#define ACCURACY @"theAccuracy"
+
 @implementation LocationTracker
 
 + (CLLocationManager *)sharedLocationManager {
@@ -182,7 +186,7 @@
         }
             break;
         case kCLErrorDenied:{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enable Location Service" message:@"You have to enable the Location Service to use this App. To enable, please go to Settings->Privacy->Location Services->CircleWatch (ON)" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enable Location Service" message:@"You have to enable the Location Service to use this App. To enable, please go to Settings->Privacy->Location Services" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [alert show];
         }
             break;
@@ -193,6 +197,57 @@
             break;
     }
 }
+
+
+//Send the location to Server
+- (void)updateLocationToServer {
+    
+    NSLog(@"updateLocationToServer");
+    
+    // Find the best location from the array based on accuracy
+    NSMutableDictionary * myBestLocation = [[NSMutableDictionary alloc]init];
+    
+    for(int i=0;i<self.shareModel.myLocationArray.count;i++){
+        NSMutableDictionary * currentLocation = [self.shareModel.myLocationArray objectAtIndex:i];
+        
+        if(i==0)
+            myBestLocation = currentLocation;
+        else{
+            if([[currentLocation objectForKey:ACCURACY]floatValue]<=[[myBestLocation objectForKey:ACCURACY]floatValue]){
+                myBestLocation = currentLocation;
+            }
+        }
+    }
+    NSLog(@"My Best location:%@",myBestLocation);
+    
+    //If the array is 0, get the last location
+    //Sometimes due to network issue or unknown reason, you could not get the location during that  period, the best you can do is sending the last known location to the server
+    if(self.shareModel.myLocationArray.count==0)
+    {
+        NSLog(@"Unable to get location, use the last known location");
+
+        self.myLocation=self.myLastLocation;
+        self.myLocationAccuracy=self.myLastLocationAccuracy;
+        
+    }else{
+        CLLocationCoordinate2D theBestLocation;
+        theBestLocation.latitude =[[myBestLocation objectForKey:LATITUDE]floatValue];
+        theBestLocation.longitude =[[myBestLocation objectForKey:LONGITUDE]floatValue];
+        self.myLocation=theBestLocation;
+        self.myLocationAccuracy =[[myBestLocation objectForKey:ACCURACY]floatValue];
+    }
+    
+    NSLog(@"Send to Server: Latitude(%f) Longitude(%f) Accuracy(%f)",self.myLocation.latitude, self.myLocation.longitude,self.myLocationAccuracy);
+    
+    //TODO: Your code to send the self.myLocation and self.myLocationAccuracy to your server
+    
+    //After sending the location to the server successful, remember to clear the current array with the following code. It is to make sure that you clear up old location in the array and add the new locations from locationManager
+    [self.shareModel.myLocationArray removeAllObjects];
+    self.shareModel.myLocationArray = nil;
+    self.shareModel.myLocationArray = [[NSMutableArray alloc]init];
+}
+
+
 
 
 @end

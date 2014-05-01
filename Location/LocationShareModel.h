@@ -16,8 +16,6 @@
 @property (nonatomic) BackgroundTaskManager * bgTask;
 @property (nonatomic) NSMutableArray *myLocationArray;
 
-@property (nonatomic) CLLocationCoordinate2D myCurrentLocation;
-
 +(id)sharedModel;
 
 @end

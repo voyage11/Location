@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property LocationTracker * locationTracker;
+@property (nonatomic) NSTimer* locationUpdateTimer;
 
 @end
