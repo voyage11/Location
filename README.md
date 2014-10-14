@@ -22,3 +22,5 @@ I am glad that this solution helps some other iOS developers who are developing 
 based application. So far, this is the most popular post on my blog. If you have any question, you may join us for a discussion here: [Background Location Update Programming for iOS 7](http://mobileoop.com/background-location-update-programming-for-ios-7 "Background Location Update Programming for iOS 7").
 
 <strong>Update on 26 September 2014</strong>: I have updated the solution to work on iOS 8. 
+
+<strong>Update on 14 October 2014</strong>: I have Moved the delay10Seconds timer to become a share property. 
