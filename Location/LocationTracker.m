@@ -169,8 +169,12 @@
     
     //Will only stop the locationManager after 10 seconds, so that we can get some accurate locations
     //The location manager will only operate for 10 seconds to save battery
-    NSTimer * delay10Seconds;
-    delay10Seconds = [NSTimer scheduledTimerWithTimeInterval:10 target:self
+    if (self.shareModel.delay10Seconds) {
+        [self.shareModel.delay10Seconds invalidate];
+        self.shareModel.delay10Seconds = nil;
+    }
+    
+    self.shareModel.delay10Seconds = [NSTimer scheduledTimerWithTimeInterval:10 target:self
                                                     selector:@selector(stopLocationDelayBy10Seconds)
                                                     userInfo:nil
                                                      repeats:NO];
