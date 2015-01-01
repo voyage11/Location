@@ -24,3 +24,9 @@ based application. So far, this is the most popular post on my blog. If you have
 <strong>Update on 26 September 2014</strong>: I have updated the solution to work on iOS 8. 
 
 <strong>Update on 14 October 2014</strong>: I have Moved the delay10Seconds timer to become a share property. 
+
+Personal Note
+==============
+I have used a lot of my personal time in experimenting/learning the Core Location APIs and share the solution for FREE. If my article and solution on Github helps you, please consider to donate. Donation will motivate myself to work harder in sharing more and helping more people. You may find the donation box on my website: http://mobileoop.com/
+
+Thanks.
