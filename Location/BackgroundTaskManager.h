@@ -12,5 +12,6 @@
 +(instancetype)sharedBackgroundTaskManager;
 
 -(UIBackgroundTaskIdentifier)beginNewBackgroundTask;
+-(void)endAllBackgroundTasks;
 
 @end
