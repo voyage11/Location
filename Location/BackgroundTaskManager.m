@@ -38,10 +38,15 @@
 {
     UIApplication* application = [UIApplication sharedApplication];
     
-    UIBackgroundTaskIdentifier bgTaskId = UIBackgroundTaskInvalid;
+    __block UIBackgroundTaskIdentifier bgTaskId = UIBackgroundTaskInvalid;
     if([application respondsToSelector:@selector(beginBackgroundTaskWithExpirationHandler:)]){
         bgTaskId = [application beginBackgroundTaskWithExpirationHandler:^{
             NSLog(@"background task %lu expired", (unsigned long)bgTaskId);
+            
+            [self.bgTaskIdList removeObject:@(bgTaskId)];
+            [application endBackgroundTask:bgTaskId];
+            bgTaskId = UIBackgroundTaskInvalid;
+            
         }];
         if ( self.masterTaskId == UIBackgroundTaskInvalid )
         {
