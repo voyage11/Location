@@ -23,6 +23,8 @@
 		if (_locationManager == nil) {
 			_locationManager = [[CLLocationManager alloc] init];
             _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+			_locationManager.allowsBackgroundLocationUpdates = YES;
+			_locationManager.pausesLocationUpdatesAutomatically = NO;
 		}
 	}
 	return _locationManager;
