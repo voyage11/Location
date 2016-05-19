@@ -31,4 +31,5 @@ Currently, I am working as a [Senior iOS Developer in Singapore](http://mobileoo
 
 
 Thanks.
+
 Ricky
