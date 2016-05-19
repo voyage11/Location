@@ -27,7 +27,10 @@ based application. So far, this is the most popular post on my blog. If you have
 
 Personal Note
 ==============
-I have used a lot of my personal time in experimenting/learning the Core Location APIs and share the solution for FREE. If my article and solution on Github helps you, please consider to donate. Donation will motivate myself to work harder in sharing more and helping more people. You may find the donation box on my website: http://mobileoop.com/
+Currently, I am working as a Senior iOS Developer in Singapore. 
+
+[Background Location Update Programming for iOS 7 and 8](http://mobileoop.com/background-location-update-programming-for-ios-7 "Background Location Update Programming for iOS 7 and 8").
+http://mobileoop.com/
 
 Thanks.
 Ricky
