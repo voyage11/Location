@@ -27,10 +27,8 @@ based application. So far, this is the most popular post on my blog. If you have
 
 Personal Note
 ==============
-Currently, I am working as a Senior iOS Developer in Singapore. 
+Currently, I am working as a [Senior iOS Developer in Singapore](http://mobileoop.com/ "Senior iOS Developer in Singapore").
 
-[Background Location Update Programming for iOS 7 and 8](http://mobileoop.com/background-location-update-programming-for-ios-7 "Background Location Update Programming for iOS 7 and 8").
-http://mobileoop.com/
 
 Thanks.
 Ricky
