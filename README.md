@@ -19,7 +19,7 @@ The solution that I am provided might not be elegant but it is able to do what I
 do. I am constantly looking for a better solution when I have time. 
 
 I am glad that this solution helps some other iOS developers who are developing location 
-based application. So far, this is the most popular post on my blog. If you have any question, you may join us for a discussion here: [Background Location Update Programming for iOS 7 and 8](http://mobileoop.com/background-location-update-programming-for-ios-7 "Background Location Update Programming for iOS 7 and 8").
+based application. So far, this is the most popular post on my blog. If you have any question, you may join us for a discussion here: [Background Location Update Programming for iOS 7 and 8](https://mobileoop.com/background-location-update-programming-for-ios-7 "Background Location Update Programming for iOS 7 and 8").
 
 <strong>Update on 26 September 2014</strong>: I have updated the solution to work on iOS 8. 
 
@@ -27,7 +27,7 @@ based application. So far, this is the most popular post on my blog. If you have
 
 Personal Note
 ==============
-Currently, I am working as a [Senior iOS Developer in Singapore](http://mobileoop.com/ "Senior iOS Developer in Singapore"). I might not be free to keep this solution updated. Please check the changes on the latest iOS to make sure that the solutions works well. Thanks.
+Currently, I am working as a [Senior iOS Developer in Singapore](https://mobileoop.com/ "Senior iOS Developer in Singapore"). I might not be free to keep this solution updated. Please check the changes on the latest iOS to make sure that the solutions works well. Thanks.
 
 
 Thanks.
